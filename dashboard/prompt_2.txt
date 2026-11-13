@@ -1,0 +1,17 @@
+Evaluate Transport Security and HTTP Headers (Rules R1-R10) from the JSON. Respond ONLY with the requested Markdown. DO NOT write anything else. You MUST describe each choice based on the data.
+
+### Transport Security (R1-R4)
+* **R1 (W:15) HTTPS Availability:** [Pass/Fail] - *Reason:* [Describe based on status code or HTTPS flag]
+* **R2 (W:10) HTTPS Redirection:** [Pass/Fail] - *Reason:* [Describe based on redirects data]
+* **R3 (W:10) TLS Version:** [Extract Version. Pass if 1.3, Partial if 1.2, Fail if missing] - *Reason:* [Describe the TLS data found]
+* **R4 (W:10) Certificate Validity:** [Pass/Fail & Days] - *Reason:* [Describe based on expiry data]
+
+### HTTP Security Headers (R5-R10)
+| Rule | Header | Value Found (or "Missing") | Status | Risk | Reason (Describe Choice) |
+|---|---|---|---|---|---|
+| R5 | Strict-Transport-Security | [Value] | [Pass/Fail] | High | [Describe why pass/fail based on JSON] |
+| R6 | Content-Security-Policy | [Value] | [Pass/Fail] | High | [Describe why pass/fail based on JSON] |
+| R7 | X-Frame-Options | [Value] | [Pass/Fail] | Medium | [Describe why pass/fail based on JSON] |
+| R8 | X-Content-Type-Options | [Value] | [Pass/Fail] | Low | [Describe why pass/fail based on JSON] |
+| R9 | Referrer-Policy | [Value] | [Pass/Fail] | Low | [Describe why pass/fail based on JSON] |
+| R10 | Permissions-Policy | [Value] | [Pass/Fail] | Low | [Describe why pass/fail based on JSON] |

@@ -1,0 +1,10 @@
+Evaluate Session, Disclosure, and Email Security (Rules R11-R14) from the JSON. Respond ONLY with this exact Markdown list. DO NOT write anything else. You MUST describe each choice based on the data.
+
+* **R11 (Weight 5) Cookie Security:** [State if Secure/HttpOnly present, or 'No cookies']
+  * *Reason:* [Describe findings in the cookies array]
+* **R12 (Weight 5) Software Disclosure:** [Pass/Fail. Pass if version hidden, Fail if exposed]
+  * *Reason:* [Describe the exact server string or X-Powered-By header found]
+* **R13 (Weight 5) SPF Record:** [Pass/Excluded]
+  * *Reason:* [Describe if TXT records containing v=spf1 were found]
+* **R14 (Weight 5) DMARC Record:** [Pass/Excluded]
+  * *Reason:* [Describe the DMARC policy found, or state data is missing]

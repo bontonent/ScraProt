@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScraProt Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Highlight.js for Beautiful JSON Formatting (Nord Theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🛡️ ScraProt Security Dashboard</h1>
+    </header>
+
+    <div class="control-panel">
+
+        <!-- COMBINED PANEL: View Data & AI Report -->
+        <div class="card action-box" style="border-top: 4px solid var(--nord8);">
+            <h3>🗄️ Analyze Existing Target</h3>
+            <p class="help-text">Search and select a previously scanned domain to view its raw JSON data or generate a comprehensive AI security report.</p>
+
+            <div class="input-group">
+                <input list="scanned-domains" id="existing-domain-input" placeholder="Search or select a domain..." value="{{ view_domain }}">
+                <datalist id="scanned-domains">
+                    {% for d in domains %}
+                        <option value="{{ d }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+
+            <div class="button-group">
+                <button id="btn-view" class="btn btn-blue btn-large">🔍 View Data</button>
+                <button id="btn-ai" class="btn btn-purple btn-large">🤖 AI Report</button>
+            </div>
+        </div>
+
+        <!-- PANEL 2: Scan New Domain -->
+        <div class="card action-box" style="border-top: 4px solid #a3be8c;">
+            <h3>⚡ Scan New Target</h3>
+            <p class="help-text">Enter a new URL to run the complete ScraProt pipeline (WAF, Checker, PredictLeads, DomScan). Page will reload upon completion.</p>
+
+            <div class="input-group">
+                <input type="text" id="new-domain-input" placeholder="e.g., https://ffp.nl/vind-een-planner">
+            </div>
+
+            <div class="button-group">
+                <button id="btn-scan" class="btn btn-green btn-large">🚀 Launch Pipeline</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Status Messages Output -->
+    <div id="status-box" class="card status-card" style="display: none;">
+        <h3 id="status-title" style="margin-top: 0; color: var(--nord8);">Output</h3>
+        <pre id="status-text" style="white-space: pre-wrap; word-wrap: break-word; font-family: 'JetBrains Mono', monospace;"></pre>
+    </div>
+
+    <!-- Raw Data View (Shows ONLY if Button 'View Data' is used) -->
+    {% if data %}
+    <div id="data-view-section">
+        <h2 class="data-header">🎯 Scraped Target Data: <span>{{ view_domain }}</span></h2>
+
+        <div class="grid-container">
+            <!-- WAF Window -->
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span class="window-title">WAFw00f.json</span>
+                </div>
+                <pre><code class="language-json">{{ data.waf | tojson(indent=2) }}</code></pre>
+            </div>
+
+            <!-- Checker Window -->
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span class="window-title">Checker.json</span>
+                </div>
+                <pre><code class="language-json">{{ data.checker | tojson(indent=2) }}</code></pre>
+            </div>
+
+            <!-- PredictLeads Window -->
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span class="window-title">PredictLeads.json</span>
+                </div>
+                <pre><code class="language-json">{{ data.predictleads | tojson(indent=2) }}</code></pre>
+            </div>
+
+            <!-- DomScan Window -->
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span class="window-title">DomScan.json</span>
+                </div>
+                <pre><code class="language-json">{{ data.domscan | tojson(indent=2) }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Syntax Highlighting -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+    {% endif %}
+
+    <!-- Interactive Buttons Logic -->
+    <script>
+        const btnView = document.getElementById('btn-view');
+        const btnAi = document.getElementById('btn-ai');
+        const btnScan = document.getElementById('btn-scan');
+
+        const statusBox = document.getElementById('status-box');
+        const statusText = document.getElementById('status-text');
+        const statusTitle = document.getElementById('status-title');
+
+        function showStatus(title, message) {
+            statusBox.style.display = 'block';
+            statusTitle.innerText = title;
+            statusText.innerText = message;
+            statusBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 1. VIEW DATA
+        btnView.addEventListener('click', () => {
+            const domain = document.getElementById('existing-domain-input').value.trim();
+            if (!domain) return alert("Please select a domain from the list!");
+            window.location.href = `/?view_domain=${encodeURIComponent(domain)}`;
+        });
+
+        // 2. AI REPORT
+        btnAi.addEventListener('click', async () => {
+            const domain = document.getElementById('existing-domain-input').value.trim();
+            if (!domain) return alert("Please select a domain from the list!");
+
+            showStatus("🤖 Generating AI Report", `Analyzing data for ${domain}...\nThis may take a minute depending on your hardware.`);
+            btnAi.disabled = true;
+
+            try {
+                const res = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ domain: domain })
+                });
+
+                // Read the response safely
+                const out = await res.json();
+
+                // Check if the HTTP status is 200 OK, instead of checking if out.report exists
+                if (res.ok) {
+                    showStatus(`✅ AI Report for ${domain}`, out.report || "Ollama finished, but returned an empty response.");
+                } else {
+                    // If it's a 400 or 500 error, show the explicit error message
+                    showStatus("❌ Error", out.error || "Unknown server error occurred.");
+                }
+            } catch (err) {
+                console.error("Fetch error:", err);
+                showStatus("❌ Connection Error", "Could not connect to the backend API or parsing failed. Check console.");
+            } finally {
+                btnAi.disabled = false;
+            }
+        });
+
+        // 3. SCAN NEW
+        btnScan.addEventListener('click', async () => {
+            const url = document.getElementById('new-domain-input').value.trim();
+            if (!url) return alert("Enter a URL to scan!");
+
+            showStatus("🚀 Scanning System", `Running main_system.py for ${url}...\nPlease wait. The page will refresh when complete.`);
+            btnScan.disabled = true;
+
+            try {
+                const res = await fetch('/api/scan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ domain: url })
+                });
+                const out = await res.json();
+
+                if (res.ok) {
+                    showStatus("✅ Scan Complete", out.message);
+                    setTimeout(() => window.location.href = '/', 2000);
+                } else {
+                    showStatus("❌ Error", out.error);
+                    btnScan.disabled = false;
+                }
+            } catch (err) {
+                showStatus("❌ Connection Error", "Could not connect to the backend API.");
+                btnScan.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

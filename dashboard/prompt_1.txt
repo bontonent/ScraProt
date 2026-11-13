@@ -1,0 +1,23 @@
+Extract the core infrastructure details from the JSON. Respond ONLY with this exact Markdown list. DO NOT write anything else. You MUST describe the reasoning for each choice based on the data.
+
+* **Hosting/IP:** [Extract A/AAAA IP]
+  * *Reason:* [Describe where this IP was found in the data]
+* **Name Servers:** [Extract NS records]
+  * *Reason:* [Describe where this was found]
+* **WAF/CDN:** [Extract server header or detected WAF]
+  * *Reason:* [Describe the specific header or signature that triggered this choice]
+* **Domain Registration:** [Extract dates from RDAP]
+  * *Reason:* [Describe if data was available or missing]
+* **Domain Reputation:** [Extract risk level]
+  * *Reason:* [Describe why this risk level was assigned based on the JSON]Extract the core infrastructure details from the JSON. Respond ONLY with this exact Markdown list. DO NOT write anything else. You MUST describe the reasoning for each choice based on the data.
+
+* **Hosting/IP:** [Extract A/AAAA IP]
+  * *Reason:* [Describe where this IP was found in the data]
+* **Name Servers:** [Extract NS records]
+  * *Reason:* [Describe where this was found]
+* **WAF/CDN:** [Extract server header or detected WAF]
+  * *Reason:* [Describe the specific header or signature that triggered this choice]
+* **Domain Registration:** [Extract dates from RDAP]
+  * *Reason:* [Describe if data was available or missing]
+* **Domain Reputation:** [Extract risk level]
+  * *Reason:* [Describe why this risk level was assigned based on the JSON]

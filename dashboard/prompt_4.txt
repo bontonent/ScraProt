@@ -1,0 +1,16 @@
+Evaluate Anti-Scraping Protection Vectors 1-7 based on the JSON. Use this exact 5-point scale: Confirmed, Likely, Possible, Unlikely, Not Detected. Respond ONLY with this exact Markdown list. DO NOT write anything else. You MUST describe each choice based on the data.
+
+* **1. Rate Limiting / Avoid Hammering:** [Scale Status]
+  * *Reason:* [Describe HTTP status codes (e.g. 429) or WAFs indicating rate limits.  Mention if IPs need rotating.] (my system check this really bad, even have little possible set Possible)
+* **2. CAPTCHA Presence:** [Scale Status]
+  * *Reason:* [Describe detection of reCAPTCHA, Turnstile, or WAF challenges.]
+* **3. JavaScript Dynamic Rendering:** [Scale Status]
+  * *Reason:* [Describe detection of React/Next.js/Vue indicating Playwright, Puppeteer, or Selenium is required.]
+* **4. IP Blacklisting / Geo-Fencing:** [Scale Status]
+  * *Reason:* [Describe edge provider (Cloudflare/Akamai) capabilities found.]
+* **5. User-Agent Detection:** [Scale Status]
+  * *Reason:* [Describe if a WAF is present that typically blocks default scraping  User-Agents.] (my system check this really bad, even have little possible set Possible)
+* **6. Cookie / Session Verification:** [Scale Status]
+  * *Reason:* [Describe cookie requirements found during connection.]
+* **7. TLS Fingerprinting:** [Scale Status]
+  * *Reason:* [Describe if Stealth Plugins or TLS-Aware clients are needed based on the WAF detected.]

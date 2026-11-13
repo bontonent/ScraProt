@@ -1,0 +1,16 @@
+Evaluate Anti-Scraping Protection Vectors 8-14 based on the JSON. Use this exact 5-point scale: Confirmed, Likely, Possible, Unlikely, Not Detected. Respond ONLY with this exact Markdown list. DO NOT write anything else. You MUST describe each choice based on the data.
+
+* **8. Behavioral Analysis:** [Scale Status]
+  * *Reason:* [Describe JS checking for human actions like mouse movement, scrolls, or typing.]
+* **9. Device Fingerprinting:** [Scale Status]
+  * *Reason:* [Describe indicators of Canvas/GPU/OS/Fonts fingerprinting scripts.]
+* **10. Honeypots (Hidden Elements):** [Scale Status]
+  * *Reason:* [Describe if hidden input fields were found that scrapers should skip.]
+* **11. JavaScript Obfuscation:** [Scale Status]
+  * *Reason:* [Describe complex JS, required signed tokens, or WAF cloudflare/Akamai/Imperva firewalls.]
+* **12. Login/Session Abuse Detection:** [Scale Status]
+  * *Reason:* [Describe password fields or CSRF tokens requiring scrapers to mimic real user behavior post-login.]
+* **13. Scroll & Viewport Checks:** [Scale Status]
+  * *Reason:* [Describe indicators of lazy-loaded content requiring programmatic scrolling.]
+* **14. Shadow DOM & Obfuscated HTML:** [Scale Status]
+  * *Reason:* [Describe Shadow DOM indicators found requiring JS to unshadow.]

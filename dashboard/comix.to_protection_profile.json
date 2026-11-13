@@ -1,0 +1,692 @@
+{
+    "domain": "comix.to",
+    "timestamp": 1794398908.4783921,
+    "data": {
+        "dns": {
+            "domain": "comix.to",
+            "records": {
+                "A": [
+                    {
+                        "type": "A",
+                        "name": "comix.to",
+                        "data": "104.21.49.220",
+                        "ttl": 244
+                    },
+                    {
+                        "type": "A",
+                        "name": "comix.to",
+                        "data": "172.67.152.235",
+                        "ttl": 244
+                    }
+                ],
+                "AAAA": [
+                    {
+                        "type": "AAAA",
+                        "name": "comix.to",
+                        "data": "2606:4700:3032::6815:31dc",
+                        "ttl": 108
+                    },
+                    {
+                        "type": "AAAA",
+                        "name": "comix.to",
+                        "data": "2606:4700:3035::ac43:98eb",
+                        "ttl": 108
+                    }
+                ],
+                "NS": [
+                    {
+                        "type": "NS",
+                        "name": "comix.to",
+                        "data": "alex.ns.cloudflare.com",
+                        "ttl": 86400
+                    },
+                    {
+                        "type": "NS",
+                        "name": "comix.to",
+                        "data": "emely.ns.cloudflare.com",
+                        "ttl": 86400
+                    }
+                ],
+                "MX": [],
+                "TXT": [
+                    {
+                        "type": "TXT",
+                        "name": "comix.to",
+                        "data": "\"v=spf1 include:spf.kingmailer.org ~all\"",
+                        "ttl": 300,
+                        "classification": "spf"
+                    }
+                ],
+                "CAA": [],
+                "SOA": [
+                    {
+                        "type": "SOA",
+                        "name": "comix.to",
+                        "data": "alex.ns.cloudflare.com. dns.cloudflare.com. 2419842644 10000 2400 604800 1800",
+                        "ttl": 1800
+                    }
+                ]
+            },
+            "summary": {
+                "has_a": true,
+                "has_aaaa": true,
+                "has_ns": true,
+                "has_mx": false,
+                "has_txt": true,
+                "ipv6_parity": "full"
+            },
+            "query_time_ms": 429,
+            "checked_at": "2026-11-11T12:08:29.299Z",
+            "meta": {
+                "served_by": "pop=MAD country=ES"
+            }
+        },
+        "reputation": {
+            "domain": "comix.to",
+            "reputation_score": 81,
+            "grade": "A",
+            "risk_level": "low",
+            "reputation_score_confidence": "high",
+            "factors": {
+                "age": {
+                    "score": 80,
+                    "weight": 0.05,
+                    "details": {
+                        "established_presence": true,
+                        "parked": false,
+                        "note": "Based on current online presence"
+                    }
+                },
+                "dns_security": {
+                    "score": 60,
+                    "weight": 0.2,
+                    "details": {
+                        "dnssec": false,
+                        "spf": true,
+                        "dmarc": false
+                    }
+                },
+                "ssl_certificate": {
+                    "score": 100,
+                    "weight": 0.2,
+                    "details": {
+                        "valid": true,
+                        "error": null,
+                        "chain_valid": true,
+                        "chain_depth": 3,
+                        "days_to_expiry": 73,
+                        "expired": false,
+                        "issuer": "/C=US/O=Google Trust Services/CN=WE1",
+                        "min_tls_version": "TLSv1.3",
+                        "cipher": "TLS_AES_256_GCM_SHA384",
+                        "hostname_match": true,
+                        "ocsp_stapling": false,
+                        "grade": "A+",
+                        "grade_reasons": [],
+                        "source": "proxy",
+                        "status": "valid"
+                    }
+                },
+                "hosting": {
+                    "score": 80,
+                    "weight": 0.1,
+                    "details": {
+                        "has_a_records": true,
+                        "a_record_count": 2,
+                        "parked": false
+                    }
+                },
+                "web_presence": {
+                    "score": 100,
+                    "weight": 0.15,
+                    "details": {
+                        "has_website": true,
+                        "redirects_to_https": true,
+                        "response_time_ms": 101,
+                        "parked": false,
+                        "for_sale": false,
+                        "parking_provider": null,
+                        "parking_status": "absent"
+                    }
+                },
+                "blacklists": {
+                    "score": null,
+                    "weight": 0.15,
+                    "details": {
+                        "domain_blacklists": {
+                            "status": "unknown",
+                            "checked": 0,
+                            "listed": 0,
+                            "unknown": 3,
+                            "blacklisted_on": []
+                        },
+                        "ip_blacklists": {
+                            "ip": "104.21.49.220",
+                            "status": "unknown",
+                            "checked": 2,
+                            "listed": 0,
+                            "unknown": 1,
+                            "blacklisted_on": []
+                        },
+                        "is_malware_host": false,
+                        "threat_level": "none",
+                        "threats": [],
+                        "parked": false,
+                        "for_sale": false
+                    }
+                },
+                "email_config": {
+                    "score": 65,
+                    "weight": 0.15,
+                    "details": {
+                        "has_mx": false,
+                        "mx_count": 0,
+                        "has_spf": true,
+                        "has_dmarc": false
+                    }
+                }
+            },
+            "recommendations": [
+                {
+                    "priority": "high",
+                    "category": "dns_security",
+                    "action": "Configure DMARC policy to prevent email spoofing",
+                    "impact": "+4 points"
+                },
+                {
+                    "priority": "medium",
+                    "category": "dns_security",
+                    "action": "Enable DNSSEC for DNS integrity protection",
+                    "impact": "+4 points"
+                }
+            ],
+            "meta": {
+                "query_time_ms": 5494,
+                "checks_performed": 7,
+                "cached": false,
+                "served_by": "pop=MAD country=ES"
+            },
+            "evidence_summary": {
+                "checks_performed": 7,
+                "cache_status": "miss",
+                "confidence": "high",
+                "risk_level": "low",
+                "factor_count": 7,
+                "scored_factor_count": 6,
+                "passing_factor_count": 4,
+                "warning_factor_count": 2,
+                "failing_factor_count": 0,
+                "lowest_scoring_factors": [
+                    {
+                        "name": "dns_security",
+                        "score": 60,
+                        "weight": 0.2
+                    },
+                    {
+                        "name": "email_config",
+                        "score": 65,
+                        "weight": 0.15
+                    },
+                    {
+                        "name": "age",
+                        "score": 80,
+                        "weight": 0.05
+                    }
+                ],
+                "blacklist_listed_count": 0,
+                "recommendation_count": 2,
+                "high_priority_recommendation_count": 1,
+                "grade_capped_by_parking": false
+            }
+        },
+        "headers": {
+            "url": "https://comix.to/",
+            "domain": "comix.to",
+            "checked_at": "2026-11-11T12:08:35.567Z",
+            "rubric_version": "2026-10-09.1",
+            "status": "ok",
+            "final_url": "https://comix.to/",
+            "http_status": 200,
+            "redirect_count": 0,
+            "https": true,
+            "score": 5,
+            "grade": "F",
+            "summary": {
+                "passed": 1,
+                "warned": 0,
+                "failed": 0,
+                "missing": 8,
+                "not_applicable": 2,
+                "hsts_preload_ready": false,
+                "csp_strict": false
+            },
+            "checks": [
+                {
+                    "id": "strict_transport_security",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 20,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "strict_transport_security"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "content_security_policy",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 25,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "content_security_policy"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "clickjacking",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 10,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "clickjacking"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "x_content_type_options",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 10,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "x_content_type_options"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "referrer_policy",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "browser_default_applies",
+                    "issues": [],
+                    "weight": 10,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "referrer_policy"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "permissions_policy",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 5,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "permissions_policy"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "cross_origin_opener_policy",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 5,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "cross_origin_opener_policy"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "cross_origin_embedder_policy",
+                    "status": "not_applicable",
+                    "value": null,
+                    "detail_code": "not_set_informational",
+                    "issues": [],
+                    "weight": 0,
+                    "classification": {
+                        "status": "unknown",
+                        "reason": "unsupported",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "cross_origin_embedder_policy:not_applicable"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "cross_origin_resource_policy",
+                    "status": "missing",
+                    "value": null,
+                    "detail_code": "header_missing",
+                    "issues": [],
+                    "weight": 5,
+                    "classification": {
+                        "status": "absent",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "cross_origin_resource_policy"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "information_disclosure",
+                    "status": "pass",
+                    "value": "server: cloudflare",
+                    "detail_code": "product_only",
+                    "issues": [],
+                    "weight": 5,
+                    "classification": {
+                        "status": "present",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "information_disclosure"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                },
+                {
+                    "id": "cookies",
+                    "status": "not_applicable",
+                    "value": null,
+                    "detail_code": "no_cookies_observed",
+                    "issues": [],
+                    "weight": 5,
+                    "classification": {
+                        "status": "unknown",
+                        "reason": "unsupported",
+                        "evidence": {
+                            "source": "http",
+                            "method": "http_response_header",
+                            "observed_at": "2026-11-11T12:08:35.567Z",
+                            "detail": "cookies:not_applicable"
+                        },
+                        "checked_at": "2026-11-11T12:08:35.567Z"
+                    }
+                }
+            ],
+            "cookies": [],
+            "headers_raw": {
+                "server": "cloudflare"
+            },
+            "recommendations": [
+                "add_hsts",
+                "add_csp",
+                "add_frame_protection",
+                "add_x_content_type_options_nosniff",
+                "set_strict_referrer_policy",
+                "add_permissions_policy",
+                "add_cross_origin_opener_policy",
+                "add_cross_origin_resource_policy"
+            ],
+            "fetch": {
+                "checked_url": "https://comix.to/",
+                "http_status": 200,
+                "final_url": "https://comix.to/",
+                "via_proxy": true,
+                "redirect_count": 0,
+                "unknown_reason": null
+            },
+            "caveats": [
+                "set_cookie_visibility_limited",
+                "meta_csp_not_evaluated"
+            ],
+            "classification": {
+                "status": "absent",
+                "evidence": {
+                    "source": "http",
+                    "method": "http_response_headers",
+                    "observed_at": "2026-11-11T12:08:35.567Z",
+                    "detail": "http_200"
+                },
+                "checked_at": "2026-11-11T12:08:35.567Z"
+            }
+        },
+        "robots": {
+            "domain": "comix.to",
+            "url": "https://comix.to/",
+            "robots_url": "https://comix.to/robots.txt",
+            "status": "found",
+            "checked_at": "2026-11-11T12:08:36.697Z",
+            "fetch": {
+                "checked_url": "https://comix.to/robots.txt",
+                "http_status": 200,
+                "final_url": "https://comix.to/robots.txt",
+                "via_proxy": true,
+                "redirect_count": 0,
+                "content_type": "text/plain; charset=utf-8",
+                "bytes": 81,
+                "truncated": false,
+                "error": null
+            },
+            "sitemaps": [
+                "https://comix.to/sitemap/index.xml"
+            ],
+            "groups": [
+                {
+                    "user_agents": [
+                        "*"
+                    ],
+                    "rules": [
+                        {
+                            "type": "disallow",
+                            "path": "/u/",
+                            "line": 2
+                        },
+                        {
+                            "type": "allow",
+                            "path": "/",
+                            "line": 3
+                        }
+                    ],
+                    "crawl_delay": null
+                }
+            ],
+            "other_directives": [],
+            "test": {
+                "user_agent": "*",
+                "path": "/",
+                "matched_group": "wildcard",
+                "matched_user_agents": [
+                    "*"
+                ],
+                "allowed": true,
+                "matched_rule": {
+                    "type": "allow",
+                    "path": "/",
+                    "line": 3
+                },
+                "reason": "matched_allow"
+            },
+            "ai_crawlers": [
+                {
+                    "user_agent": "GPTBot",
+                    "owner": "openai",
+                    "purpose": "training",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "OAI-SearchBot",
+                    "owner": "openai",
+                    "purpose": "search",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "ChatGPT-User",
+                    "owner": "openai",
+                    "purpose": "user_fetch",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "ClaudeBot",
+                    "owner": "anthropic",
+                    "purpose": "training",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Claude-SearchBot",
+                    "owner": "anthropic",
+                    "purpose": "search",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Claude-User",
+                    "owner": "anthropic",
+                    "purpose": "user_fetch",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Google-Extended",
+                    "owner": "google",
+                    "purpose": "training_control",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "PerplexityBot",
+                    "owner": "perplexity",
+                    "purpose": "search",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Perplexity-User",
+                    "owner": "perplexity",
+                    "purpose": "user_fetch",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "CCBot",
+                    "owner": "common_crawl",
+                    "purpose": "training",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Bytespider",
+                    "owner": "bytedance",
+                    "purpose": "training",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Applebot-Extended",
+                    "owner": "apple",
+                    "purpose": "training_control",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "meta-externalagent",
+                    "owner": "meta",
+                    "purpose": "training",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                },
+                {
+                    "user_agent": "Amazonbot",
+                    "owner": "amazon",
+                    "purpose": "search",
+                    "root_access": "partial",
+                    "group": "wildcard"
+                }
+            ],
+            "issues": [],
+            "caveats": [],
+            "summary": {
+                "groups": 1,
+                "rules": 2,
+                "allow_rules": 1,
+                "disallow_rules": 1,
+                "sitemaps": 1,
+                "issues": 0,
+                "lines": 5,
+                "ai_crawlers_allowed": 0,
+                "ai_crawlers_disallowed": 0,
+                "ai_crawlers_partial": 14,
+                "ai_crawlers_unknown": 0,
+                "ai_crawlers_with_specific_group": 0
+            },
+            "meta": {
+                "cached": false,
+                "duration_ms": 556,
+                "source_version": "2026-10-09"
+            },
+            "classification": {
+                "status": "present",
+                "evidence": {
+                    "source": "http",
+                    "method": "robots_fetch",
+                    "observed_at": "2026-11-11T12:08:36.697Z",
+                    "detail": "http_200"
+                },
+                "checked_at": "2026-11-11T12:08:36.697Z"
+            },
+            "cache_age_s": 0
+        }
+    }
+}

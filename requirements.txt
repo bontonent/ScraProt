@@ -1,0 +1,16 @@
+beautifulsoup4
+bs4
+certifi
+charset-normalizer
+domscan-sdk @ https://github.com/estevecastells/domscan-sdk/releases/latest/download/domscan-sdk-python.tar.gz#sha256
+greenlet
+idna
+pip
+playwright
+pyee
+PySocks
+requests
+soupsieve
+typing_extensions
+urllib3
+wafw00f
