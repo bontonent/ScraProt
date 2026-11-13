@@ -13,7 +13,7 @@ import open_recon
 load_dotenv()
 
 class ScraProt:
-    def __init__(self, url="https://www.colorhexa.com/f5f6fa"):
+    def __init__(self, url="https://auto.ria.com/search/?search_type=2&category=1&abroad=0&customs_cleared=1"):
         print(f"Raw input: {url}")
 
         # 1. Delete https:// or http://
