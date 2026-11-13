@@ -130,7 +130,7 @@ def analyze_domain():
 
         try:
             response = requests.post('http://localhost:11434/api/chat', json={
-                "model": "qwen2.5:14b",
+                "model": "mistral-nemo",
                 "messages": chat_history, # Pass the entire history so it remembers!
                 "stream": False,
                 "options": {
